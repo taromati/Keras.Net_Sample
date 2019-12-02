@@ -118,6 +118,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="model\keras_model.h5" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -132,8 +133,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Content Include="240px-Strawberry_BNC.jpg" />
+    <Content Include="model\240px-Strawberry_BNC.jpg" />
+    <Content Include="model\labels.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)model\*.*" "$(ProjectDir)$(OutDir)" /Y</PostBuildEvent>
+  </PropertyGroup>
 </Project>
