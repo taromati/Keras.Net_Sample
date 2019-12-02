@@ -1,0 +1,4 @@
+0 Strawberry
+1 Tomato
+2 Tanker
+3 Bush
